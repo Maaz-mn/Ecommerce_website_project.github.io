@@ -154,3 +154,76 @@ body {
 .h1{
   text-align: start;
 }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.9em;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .card {
+      max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      max-width: 90%;
+  }
+}
+.card1img{
+  filter: brightness(50%);
+}
+.card2img{
+  filter: brightness(50%);
+}
+.card3img{
+  filter: brightness(50%);
+}
