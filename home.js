@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.card1');
 
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'scale(1.05)';
+    cards.forEach(card1 => {
+        card1.addEventListener('mouseenter', () => {
+            card1.style.transform = 'scale(1.05)';
         });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
+        card1.addEventListener('mouseleave', () => {
+            card1.style.transform = 'scale(1)';
         });
     });
 });
