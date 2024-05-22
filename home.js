@@ -33,3 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const offer = document.querySelector('.offer-container');
+    
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        
+        // When the page is scrolled down by at least half of the viewport height
+        if (scrollY > viewportHeight / 2) {
+            offer.classList.add('slide-up');
+        } else {
+            offer.classList.remove('slide-up');
+        }
+    });
+  });

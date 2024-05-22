@@ -247,7 +247,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  width: calc(10% - 10px); /* Adjust width to fit 5 cards in a row, including gaps */
+  width: calc(10% - 10px);
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
@@ -306,4 +306,109 @@ body {
   /* width: 100%; */
   padding: 30px;
   margin-top: 50px;
+}
+.offer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+  background-image: url('./Pictures/banner-03.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  transition: background-position 1s ease-in-out;
+}
+.offer-container.slide-up {
+  background-position: center top; /* Adjusted background position for slide up effect */
+}
+.offer-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.offer-content {
+  max-width: 600px;
+}
+
+.offer-content h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.offer-content h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.offer-content p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.feature {
+  text-align: center;
+  max-width: 200px;
+}
+
+.feature img {
+  max-width: 50px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .offer-content h1 {
+      font-size: 28px;
+  }
+
+  .offer-content h2 {
+      font-size: 18px;
+  }
+
+  .offer-content p {
+      font-size: 14px;
+  }
+
+  .features {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .feature {
+      margin-bottom: 20px;
+  }
+}
+.h3s{
+  text-align: center;
+  padding: 25px;
 }
