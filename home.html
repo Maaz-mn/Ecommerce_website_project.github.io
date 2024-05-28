@@ -11,21 +11,32 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-logo"><img src="./Pictures/logo1-free-img-140x47.png" alt=""></div>
+        <div class="navbar-logo"><a href="./home.html"></a><img src="./Pictures/logo1-free-img-140x47.png" alt=""></div>
         <div class="navbar-links" id="navbarLinks">
             <a href="#">Everything</a>
-            <a href="#">Women</a>
+            <a href="./women.html">Women</a>
             <a href="#">Men</a>
             <a href="#">Accessories</a>
             <a href="#">About</a>
             <a href="#">Contact Us</a>
         </div>
         <div class="navbar-icons">
-          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
             <a href="#"><i class="fas fa-user"></i></a>
         </div>
         <div class="burger fa-bars fa-solid" id="burger"></div>
     </nav>
+    <div id="cart-sidebar">
+        <h2>Shopping Cart <button class="close" onclick="toggleCart()">X</button></h2>
+        <ul id="cart-items"></ul>
+        <div class="cart-total">
+            <h3>Subtotal: $<span id="cart-subtotal">0.00</span></h3>
+            <button onclick="viewCart()">View Cart</button>
+        </div>
+    </div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-close" id="closeMenu">&times;</div>
         <a href="#">Everything</a>
