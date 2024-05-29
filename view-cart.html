@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3d22b6e724.js" crossorigin="anonymous"></script>
+    <title>View Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .cart-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .coupon, .cart-totals, .checkout {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .checkout {
+            display: flex;
+            justify-content: center;
+        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo img {
+    height: 47px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #000;
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #26a69a;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icons a,
+.navbar-icons .cart-icon {
+    color: #000;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar-icons .cart-icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff6f61;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+/* For devices with a width up to 600px */
+@media (max-width: 600px) {
+    .cart-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
+
+    .coupon input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .checkout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .checkout button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .small-loader {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* For devices with a width between 601px and 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+    .cart-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .coupon input[type="text"] {
+        width: 75%;
+        margin-bottom: 10px;
+    }
+
+    .checkout {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .checkout button {
+        width: auto;
+    }
+
+    .small-loader {
+        margin-left: 10px;
+        margin-top: 0;
+    }
+}
+
+/* For devices with a width between 901px and 1200px */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .cart-container {
+        width: 85%;
+        padding: 20px;
+    }
+
+    table, th, td {
+        font-size: 16px;
+    }
+
+    .coupon input[type="text"] {
+        width: 50%;
+    }
+
+    .checkout {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .checkout button {
+        width: auto;
+    }
+
+    .small-loader {
+        margin-left: 10px;
+        margin-top: 0;
+    }
+}
+
+/* For devices with a width over 1200px */
+@media (min-width: 1201px) {
+    .cart-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    table, th, td {
+        font-size: 18px;
+    }
+
+    .coupon input[type="text"] {
+        width: 40%;
+    }
+
+    .checkout {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .checkout button {
+        width: auto;
+    }
+
+    .small-loader {
+        margin-left: 10px;
+        margin-top: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo"><a href="./home.html"><img src="./Pictures/logo@2x-free-img-120x40.png" alt=""></a></div>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="./everything.html">Everything</a>
+            <a href="./women.html">Women</a>
+            <a href="./men.html">Men</a>
+            <a href="./accessories.html">Accessories</a>
+            <a href="#">About</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="navbar-icons">
+            <div class="cart-icon" onclick="toggleCart()">
+                <a href="./view-cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+        <div class="burger fa-bars fa-solid" id="burger"></div>
+    </nav>
+    <div class="cart-container">
+        <h1>Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+        <div class="coupon">
+            <input type="text" id="coupon-code" placeholder="Coupon code">
+            <button onclick="applyCoupon()">APPLY COUPON</button>
+        </div>
+        <div class="cart-totals">
+            <p>Subtotal: $<span id="cart-subtotal">0.00</span></p>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+        <div class="checkout">
+            <button onclick="checkout()">CHECKOUT</button>
+    <script>
+        let cart = [];
+
+        function updateCart() {
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                cartItems.innerHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>
+                            <button onclick="changeQuantity('${item.name}', -1)">-</button>
+                            ${item.quantity}
+                            <button onclick="changeQuantity('${item.name}', 1)">+</button>
+                        </td>
+                        <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                        <td><button onclick="removeFromCart('${item.name}')">Remove</button></td>
+                    </tr>
+                `;
+            });
+            document.getElementById('cart-subtotal').innerText = subtotal.toFixed(2);
+            document.getElementById('cart-total').innerText = subtotal.toFixed(2);
+        }
+
+        function changeQuantity(productName, amount) {
+            let product = cart.find(item => item.name === productName);
+            if (product) {
+                product.quantity += amount;
+                if (product.quantity <= 0) {
+                    cart = cart.filter(item => item.name !== productName);
+                }
+                updateCart();
+            }
+        }
+
+        function removeFromCart(productName) {
+            cart = cart.filter(item => item.name !== productName);
+            updateCart();
+        }
+
+        function checkout() {
+            window.location.href = 'checkout.html';}
+
+        function applyCoupon() {
+            // Implement coupon logic here
+            alert('Coupon applied!');
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+                updateCart();
+            }
+        };
+
+        window.onbeforeunload = function() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        };
+    </script>
+    <script src="./home.js"></script>
+</body>
+</html>

@@ -3,11 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Lato';
 }
-
 .navbar {
   display: flex;
   height: 12vh;
@@ -21,47 +19,34 @@ body {
   top: 0;
   z-index: 1000;
 }
-
 .navbar-logo {
   font-size: 30px;
   font-weight: bold;
 }
-
 .navbar-links {
   display: flex;
   align-items: center;
 }
-
 .navbar-links a {
   color: white;
   text-decoration: none;
   margin-left: 1rem;
 }
-
 .navbar-icons {
   display: flex;
   align-items: center;
 }
-
 .navbar-icons a {
   color: white;
   text-decoration: none;
   margin-left: 1rem;
 }
-
 .burger ,.fa-bars {
   display: none;
   cursor: pointer;
   flex-direction: column;
   gap: 0.5rem;
 }
-
-.burger .line {
-  width: 25px;
-  height: 3px;
-  background: white;
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -74,17 +59,16 @@ body {
   height: 90vh;
   color: white;
   padding: 0 2rem;
-  transition: background-position 1s ease-in-out; /* Added transition */
+  transition: background-position 1s ease-in-out; 
 }
 .header.slide-up {
-  background-position: center top; /* Adjusted background position for slide up effect */
+  background-position: center top; 
 }
 .header-content {
   max-width: 500px;
   text-align: left;
   margin-left: -250px;
 }
-
 .header-content h1 {
   font-size: 3rem;
 }
@@ -674,4 +658,7 @@ aside h3, aside ul {
 }
 .close:hover{
   color: red;
+}
+.close{
+  color: black;
 }
