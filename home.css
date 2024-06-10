@@ -45,7 +45,7 @@ body {
 .burger {
   display: none;
   cursor: pointer;
-  /* flex-direction: column; */
+  flex-direction: column;
   gap: 0.5rem;
 }
 .header {
@@ -266,25 +266,25 @@ body {
 
 @media (max-width: 1200px) {
   .card {
-      width: calc(25% - 20px); /* 4 cards per row */
+      width: calc(25% - 20px);
   }
 }
 
 @media (max-width: 992px) {
   .card {
-      width: calc(33.33% - 20px); /* 3 cards per row */
+      width: calc(33.33% - 20px);
   }
 }
 
 @media (max-width: 768px) {
   .card {
-      width: calc(50% - 20px); /* 2 cards per row */
+      width: calc(50% - 20px);
   }
 }
 
 @media (max-width: 576px) {
   .card {
-      width: calc(100% - 20px); /* 1 card per row */
+      width: calc(100% - 20px)
   }
 }
 .box1{
@@ -311,7 +311,7 @@ body {
   margin-top: 30px;
 }
 .offer-container.slide-up {
-  background-position: center top; /* Adjusted background position for slide up effect */
+  background-position: center top; 
 }
 .offer-box {
   position: absolute;
@@ -566,7 +566,6 @@ aside h3, aside ul {
       margin: 1% 0;
   }
 }
-/* CSS for Shopping Cart Sidebar */
 #cart-sidebar {
   position: fixed;
   top: 0;

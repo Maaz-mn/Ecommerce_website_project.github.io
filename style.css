@@ -86,10 +86,8 @@ a:hover {
         padding: 8px;
     }
 }
-
-/* Loader styles */
 .loader-container {
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;

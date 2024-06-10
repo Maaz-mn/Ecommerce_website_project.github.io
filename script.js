@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             setTimeout(function () {
                 window.location.href = 'home.html';
-            }, 2000); // 2 seconds delay
+            }, 2000);
         } else {
             alert('Invalid username or password');
         }

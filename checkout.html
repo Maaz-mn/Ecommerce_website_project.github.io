@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
-        /* Styles as provided before */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -197,8 +195,6 @@ button:hover {
     font-size: 20px;
     margin-top: 20px;
 }
-/* Existing styles... */
-
 .popup {
     position: fixed;
     top: 20%;
@@ -426,7 +422,6 @@ button:hover {
                         </tr>
                     </thead>
                     <tbody id="order-items">
-                        <!-- Order items will be dynamically added here -->
                     </tbody>
                     <tfoot>
                         <tr>
@@ -512,7 +507,6 @@ button:hover {
 </footer>
     <script >
         document.addEventListener('DOMContentLoaded', function() {
-    // Load cart items from local storage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let orderItemsContainer = document.getElementById('order-items');
     let subtotal = 0;
